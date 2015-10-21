@@ -1,0 +1,7 @@
+Napravite digitalni sat.
+Iznad digitalnog sata nalazi se kontrola za podešavanje veličine sata. Inicijalno je sat
+prikazan veličinom fonta 100px, minimalna vrijednost je 50px, a maksimalna 150px.
+Veličina fonta se mijenja za vrijeme povlačenja slidera.
+
+Ispod sata za svaku sekundu unutar minute prikazuje se kvadratić slučajne boje.
+Sve elemente stranice kreirajte dinamički.
