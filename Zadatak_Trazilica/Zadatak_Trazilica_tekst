@@ -1,0 +1,6 @@
+Napravite obrazac koji će uneseni pojam potražiti na odabranoj tražilici.
+Ako korisnik zaboravi unijeti pojam u tekstualno polje se upisuje poruka Unesite
+pojam! koja je označena i pojam se ne šalje na tražilicu.
+
+Klikom na Pretraži šalje se korisnika na odabranu tražilicu i pretražuje se uneseni
+pojam.
