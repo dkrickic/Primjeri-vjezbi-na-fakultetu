@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Zadatak Tražilica</title>
+    <link href="Zadatak_Trazilica.css" rel="stylesheet" />
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="Zadatak_Trazilica.js"></script>
+</head>
+<body>
+    <h3>Tražilica</h3>
+    <form id="forma" action="/" method="get">
+        <table>
+            <tr>
+                <td><label for="rbGoogle">Google:</label></td>
+                <td>
+                    <input type="radio" id="rbGoogle" name="rbSearchEngine" value="google" checked />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="rbBing">Bing:</label></td>
+                <td>
+                    <input type="radio" id="rbBing" name="rbSearchEngine" value="bing" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="txtPojam">Pojam:</label></td>
+                <td>
+                    <input type="text" id="txtPojam" name="q" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" id="btnPretrazi" value="Pretraži" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
