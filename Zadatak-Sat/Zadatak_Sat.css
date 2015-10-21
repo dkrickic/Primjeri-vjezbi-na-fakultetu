@@ -1,0 +1,46 @@
+body {
+    font-family:'Segoe UI';            
+}
+table, tr, td, th {
+    border-collapse:collapse;
+    padding:5px;
+}
+input[type=text],input[type=button] {
+    border:1px solid #ccc;
+    width:160px;
+    height:20px;
+    padding:5px;
+    font-weight:bold;
+}
+input[type=button],input[type=submit] {
+    width:172px;
+    height:38px;
+}
+a:link, a:visited {
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
+a:active {
+    text-decoration:none;
+}
+.sadrzaj {
+    width:800px;
+    margin:auto;
+    text-align:center;
+}
+.sat {
+    font-family:'Segoe UI', Calibri, Tahoma;
+    font-size:100px;
+}
+.kontejnerKvadratici {
+    height:10px;
+}
+.kvadratic {
+    width:10px;
+    height:10px;
+    background-color:#999;
+    float:left;
+    margin-left:3px;
+}
