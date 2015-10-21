@@ -1,0 +1,10 @@
+Pomoći jQuery biblioteke napravite web stranicu kao što je prikazano na slici. U dijelu Pregled osoba
+inicijalno su upisane 2 osobe. Podaci o osobama (ime, prezime, adresa i grad) nalaze se u poljima.
+Klikom na gumb Dodaj osobu ili klikom na ENTER tipku dodaje se nova osoba u padajući izbornik.
+Može se dodati samo osoba kojoj su ispunjena sva polja za unos, u protivnom obavještava se
+korisnika da nisu sva polja ispunjena.
+
+Nakon dodavanja nove osobe forma za unos se briše i kursor se postavlja u polje Ime.
+Odabirom osobe u padajućem izborniku prikazuje se njegova adresa i grad.
+Klikom na gumb/link Unos osoba prikazuje se odnosno skriva se blok za unos osoba.
+Klikom na gumb/link Pregled osoba prikazuje se odnosno skriva se blok za pregled osoba.
