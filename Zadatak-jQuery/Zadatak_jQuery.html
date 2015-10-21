@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Zadatak jQuery</title>
+    <style type="text/css">
+        body, fieldset legend
+        {
+            font:16px 'Segoe UI', Verdana;
+        }
+        #txtInfo
+        {
+            color:red;
+        }
+        input, textarea, select {
+            border: 1px solid #e2e2e2;
+            color: #333;
+            font-size: 1.2em;
+            padding: 5px;
+            width: 300px;
+            font-weight:bold;
+        }
+            input[type="button"]
+            {
+                width:312px;
+            }
+        fieldset
+        {
+            padding:20px;
+            border:1px solid #ccc;
+        }
+            fieldset legend, p
+            {
+                font-weight:bold;
+            }
+        p
+        {
+            font-size:1.5em;
+            color:#333;
+        }
+        .tablica
+        {
+            width: 800px;            
+        }
+        .stupac1
+        {
+            width:120px;
+            text-align:right;
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+		$(function () {
+		
+			var poljeIme = new Array ("Pero", "Ana");
+			var poljePrezime = new Array ("Perić", "Anić");
+			var poljeAdresa = new Array ("Ilica 1", "Vlaška 45");
+			var poljeGrad = new Array ("Zagreb", "Rijeka");
+			
+			$("#txtIme").focus();
+			
+			SelectUpdate();
+		
+			$("#btnDodaj").click(UnosUPolja);
+			
+			$(document).keypress(EnterClick);
+			
+			$("#ddlOsoba").change(SelectClick);
+			
+			$("#legend1").click(function () {
+				
+				$("#unos").toggle();
+			
+			});
+			
+			$("#legend2").click(function () {
+				
+				$("#pregled").toggle();
+			
+			});
+		
+		function UnosUPolja() {
+				
+				if	($("#txtIme").val() == "" || 
+					$("#txtPrezime").val() == "" ||
+					$("#txtAdresa").val() == "" ||
+					$("#txtGrad").val() == "") {
+				
+					alert("Potrebno je ispuniti sva polja!");
+				}
+				
+				else {
+					
+					poljeIme.push($("#txtIme").val());
+					poljePrezime.push($("#txtPrezime").val());
+					poljeAdresa.push($("#txtAdresa").val());
+					poljeGrad.push($("#txtGrad").val());
+					
+					resetirajPolja();
+					
+					SelectUpdate();
+				
+				}
+		}
+			
+		function SelectUpdate() {
+		
+			$("#ddlOsoba").children().remove();
+			
+			$(poljeIme).each(function(index, value) {
+				
+				var nazivOsobe = value + " " + poljePrezime[index];
+				var NovaOpcija = new Option(nazivOsobe, index);
+				$("#ddlOsoba").append(NovaOpcija);
+			
+			});
+		
+		}
+		
+		function SelectClick() {
+		
+			var adresa = poljeAdresa[$(this).val()] + " " + poljeGrad[$(this).val()];
+			$("#ispisAdrese").html(adresa);
+		
+		}
+		
+			
+		function resetirajPolja() {
+				
+				$("#txtIme").val("");
+				$("#txtPrezime").val("");
+				$("#txtAdresa").val("");
+				$("#txtGrad").val("");
+				
+				$("#txtIme").focus();
+			
+		}
+			
+		function EnterClick(e) {
+			
+				if (e.keyCode == "13") {
+					UnosUPolja();
+				}
+			
+		}
+
+		});
+		
+		
+	</script>
+</head>
+<body>
+    <fieldset><legend><a href="#" id="legend1" >Unos osoba</a></legend>
+        <div id="unos">
+            <table cellpadding="5" cellspacing="0" class="tablica">
+                <tr>
+                    <td class="stupac1">Ime:</td>
+                    <td><input type="text" id="txtIme" /></td>
+                </tr>
+                <tr>
+                    <td class="stupac1">Prezime:</td>
+                    <td><input type="text" id="txtPrezime" /></td>
+                </tr>
+                <tr>
+                    <td class="stupac1">Adresa:</td>
+                    <td><input type="text" id="txtAdresa" /></td>
+                </tr>
+                <tr>
+                    <td class="stupac1">Grad:</td>
+                    <td><input type="text" id="txtGrad" /></td>
+                </tr>
+                <tr>
+                    <td class="stupac1">&nbsp;</td>
+                    <td><input type="button" value="Dodaj osobu" id="btnDodaj"  /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p id="txtInfo"></p></td>
+                </tr>
+            </table>
+        </div>
+    </fieldset>
+        <fieldset><legend><a href="#" id="legend2" >Pregled osoba</a></legend>
+            <div id="pregled">
+
+                <table cellpadding="5" cellspacing="0" class="tablica">
+                    <tr>
+                        <td class="stupac1">Odaberi osobu:</td>
+                        <td>
+                            <select id="ddlOsoba">                                
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="stupac1">&nbsp;</td>
+                        <td><p id="ispisAdrese"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="stupac1">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+
+            </div>
+        </fieldset>
+</body>
+</html>
